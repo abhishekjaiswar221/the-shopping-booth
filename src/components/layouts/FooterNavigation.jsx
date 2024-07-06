@@ -1,7 +1,11 @@
 import React from "react";
 
 const FooterNavigation = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>Footer Navigation</h1>
+    </div>
+  );
 };
 
 export default FooterNavigation;

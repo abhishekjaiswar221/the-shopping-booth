@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import axios from "axios";
+import { Button } from "./ui/button";
 
 const ProductCard = () => {
   // State to store the fetched data
@@ -31,15 +32,18 @@ const ProductCard = () => {
   return (
     <div className="grid grid-cols-3 gap-10">
       {products.map((product) => (
-        <Card key={product.id}>
-          <CardContent>
-            <img src={product.image} alt="" />
+        <Card key={product.id} className="pt-6 w-96">
+          <CardContent className="flex items-center justify-center">
+            <img className="w-52 h-52" src={product.image} alt="" />
           </CardContent>
           <CardHeader>
             <CardTitle>{product.title}</CardTitle>
-            <CardDescription>{product.description}</CardDescription>
+            <CardDescription>
+              {product.description.slice(0, 100) + "..."}
+            </CardDescription>
           </CardHeader>
-          <CardFooter>
+          <CardFooter className="flex items-center justify-between gap-5">
+            <Button>Add to Cart</Button>
             <p>{product.price}$</p>
           </CardFooter>
         </Card>
