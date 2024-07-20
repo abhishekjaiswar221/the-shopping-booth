@@ -30,7 +30,7 @@ const ProductCard = () => {
     fetchData();
   }, []);
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div className="flex flex-col gap-10 lg:grid lg:grid-cols-3 lg:gap-10">
       {products.map((product) => (
         <Card key={product.id} className="pt-6 w-96">
           <CardContent className="flex items-center justify-center">
