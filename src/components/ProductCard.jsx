@@ -9,8 +9,11 @@ import {
 } from "@/components/ui/card";
 import axios from "axios";
 import { Button } from "./ui/button";
+import { useDispatch } from "react-redux";
+import { add } from "@/store/cartSlice";
 
 const ProductCard = () => {
+  const dispatch = useDispatch();
   // State to store the fetched data
   const [products, setProducts] = useState([]);
 
@@ -18,8 +21,8 @@ const ProductCard = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_BASE_URL}`);
-      console.log(response.data);
-      setProducts(response.data);
+      console.log(response.data.products);
+      setProducts(response.data.products);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -29,12 +32,17 @@ const ProductCard = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const addToCart = (product) => {
+    dispatch(add(product));
+  };
+
   return (
-    <div className="flex flex-col gap-10 lg:grid lg:grid-cols-3 lg:gap-10">
+    <div className="flex flex-col items-center justify-center gap-5 lg:flex lg:flex-row lg:flex-wrap">
       {products.map((product) => (
-        <Card key={product.id} className="pt-6 w-96">
-          <CardContent className="flex items-center justify-center">
-            <img className="w-52 h-52" src={product.image} alt="" />
+        <Card key={product.id} className="w-72">
+          <CardContent className="flex items-center justify-center pb-0">
+            <img className="w-56 h-56" src={product.thumbnail} alt="" />
           </CardContent>
           <CardHeader>
             <CardTitle>{product.title}</CardTitle>
@@ -43,7 +51,7 @@ const ProductCard = () => {
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex items-center justify-between gap-5">
-            <Button>Add to Cart</Button>
+            <Button onClick={() => addToCart(product)}>Add to Cart</Button>
             <p>{product.price}$</p>
           </CardFooter>
         </Card>

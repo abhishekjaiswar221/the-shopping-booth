@@ -1,33 +1,47 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import { Home, ShoppingCart, CircleUserRound } from "lucide-react";
+import { ShoppingCart, CircleUserRound } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const HeaderNavigation = () => {
+  const totalProducts = useSelector((state) => state.cart);
   return (
     <div>
       <header className="hidden bg-gray-100 border-b-2 border-gray-200 lg:block">
-        <nav className="max-w-7xl">
+        <nav>
           <div className="px-20">
             <ul className="flex items-center justify-between w-full h-14">
               <div>
                 <h1 className="text-2xl font-semibold">The Shopping Booth</h1>
               </div>
               <div className="flex items-center justify-start gap-10">
-                <li>
+                {/* <li>
                   <div>
                     <Link to="/">
                       <Home size={22} strokeWidth={1.5} />
                     </Link>
                   </div>
-                </li>
+                </li> */}
+                <li>Beauty</li>
+                {/* <li>Fragrances</li> */}
+                <li>Home Decor</li>
+                {/* <li>Furniture</li> */}
+                <li>Tech</li>
+                {/* <li>Tech Accessories</li> */}
+                <li>Home & Living</li>
+                {/* <li>Groceries</li> */}
+                {/* <li>Kitchen Accessories</li> */}
+                <li>Life Style</li>
+                <li>Mens</li>
+                <li>Women</li>
                 <li className="flex items-center justify-center gap-2">
                   <div>
                     <Link to="/cart">
                       <ShoppingCart size={26} strokeWidth={1.3} />
                     </Link>
                   </div>
-                  <div>0</div>
+                  <div>{totalProducts.length}</div>
                 </li>
               </div>
               <div className="flex items-center justify-center gap-3">
@@ -58,13 +72,25 @@ const HeaderNavigation = () => {
         </nav>
       </header>
 
-      <header>
+      <header className="lg:hidden">
         <nav>
           <div>
-            <ul className="flex flex-col w-full gap-4 text-lg text-black bg-gray-400">
+            <ul className="flex flex-col items-start justify-center w-full gap-4 p-5 text-lg text-black bg-gray-400">
               <li>
                 <Link to="/">Home</Link>
               </li>
+              <li>Beauty</li>
+              {/* <li>Fragrances</li> */}
+              <li>Home Decor</li>
+              {/* <li>Furniture</li> */}
+              <li>Tech</li>
+              {/* <li>Tech Accessories</li> */}
+              <li>Home & Living</li>
+              {/* <li>Groceries</li> */}
+              {/* <li>Kitchen Accessories</li> */}
+              <li>Life Style</li>
+              <li>Mens</li>
+              <li>Women</li>
               <li>
                 <Link to="/cart">Cart</Link>
               </li>
