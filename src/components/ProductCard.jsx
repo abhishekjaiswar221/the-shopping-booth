@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -7,32 +7,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import axios from "axios";
 import { Button } from "./ui/button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/store/cartSlice";
+import { getProducts } from "@/store/productSlice";
+import StatusCode from "@/utils/StatusCode";
 
 const ProductCard = () => {
   const dispatch = useDispatch();
-  // State to store the fetched data
-  const [products, setProducts] = useState([]);
-
-  // Function to fetch data using Axios
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}`);
-      console.log(response.data.products);
-      setProducts(response.data.products);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  const { data: products, status } = useSelector((state) => state.products);
 
   // Call fetchData on component mount
   useEffect(() => {
-    fetchData();
+    //Dispatch an action for fetchProducts
+    dispatch(getProducts());
   }, []);
 
+  if (status === StatusCode.LOADING) {
+    return <p>Loading...</p>;
+  }
+
+  if (status === StatusCode.ERROR) {
+    return <p>Something went wrong! Try agin later</p>;
+  }
   const addToCart = (product) => {
     dispatch(add(product));
   };
