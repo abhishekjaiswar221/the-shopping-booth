@@ -1,12 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/store/cartSlice";
@@ -37,20 +30,44 @@ const ProductCard = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 lg:flex lg:flex-row lg:flex-wrap">
       {products.map((product) => (
-        <Card key={product.id} className="w-72">
-          <CardContent className="flex items-center justify-center pb-0">
-            <img className="w-56 h-56" src={product.thumbnail} alt="" />
+        // <Card key={product.id} className="w-[335px]">
+        //   <CardContent className="flex items-center justify-center pb-0">
+        //     <img className="w-56 h-56" src={product.thumbnail} alt="" />
+        //   </CardContent>
+        //   <CardHeader>
+        //     <CardTitle>{product.title}</CardTitle>
+        //     <CardDescription>
+        //       {product.description.slice(0, 100) + "..."}
+        //     </CardDescription>
+        //   </CardHeader>
+        //   <CardFooter className="flex items-center justify-between gap-5">
+        //     <p>{product.price}$</p>
+        //     <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+        //   </CardFooter>
+        // </Card>
+        <Card
+          key={product.id}
+          className=" max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105"
+        >
+          <img
+            src={product.thumbnail}
+            alt="Product Image"
+            className="object-cover w-full bg-gray-100 rounded-lg h-72"
+          />
+          <CardContent className="p-4 space-y-2">
+            <div className="space-y-2">
+              <h3 className="text-base font-semibold">
+                {product.title.slice(0, 26)}
+              </h3>
+              <p className="text-muted-foreground">
+                {product.description.slice(0, 20) + "..."}
+              </p>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-xl font-bold">${product.price}</span>
+              <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+            </div>
           </CardContent>
-          <CardHeader>
-            <CardTitle>{product.title}</CardTitle>
-            <CardDescription>
-              {product.description.slice(0, 100) + "..."}
-            </CardDescription>
-          </CardHeader>
-          <CardFooter className="flex items-center justify-between gap-5">
-            <Button onClick={() => addToCart(product)}>Add to Cart</Button>
-            <p>{product.price}$</p>
-          </CardFooter>
         </Card>
       ))}
     </div>
