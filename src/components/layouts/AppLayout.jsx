@@ -1,21 +1,24 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import HeaderNavigation from "./HeaderNavigation";
 import FooterNavigation from "./FooterNavigation";
 import { Provider } from "react-redux";
 import store from "@/store/store";
 const AppLayout = () => {
+  const location = useLocation();
+  const hideHeaderFooter = ["/sign-up", "/sign-in"].includes(location.pathname);
   return (
     <>
       <Provider store={store}>
         {/* Your header content */}
-        <HeaderNavigation />
+        {/* <HeaderNavigation /> */}
+        {!hideHeaderFooter && <HeaderNavigation />}
         <main>
           {/* Child routes will render here */}
           <Outlet />
         </main>
         {/* Your footer content */}
-        <FooterNavigation />
+        {!hideHeaderFooter && <FooterNavigation />}
       </Provider>
     </>
   );
