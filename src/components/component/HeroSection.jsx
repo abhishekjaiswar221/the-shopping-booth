@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
 import { Button } from "../ui/button";
-import { add } from "@/store/cartSlice";
 import StatusCode from "@/utils/StatusCode";
-import { getProducts } from "@/store/productSlice";
+import { getHeroProducts } from "@/store/heroSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Card, CardContent } from "@/components/ui/card";
 
-const ProductCard = () => {
+const HeroSection = () => {
   const dispatch = useDispatch();
-  const { data: products, status } = useSelector((state) => state.products);
+  const { data: heroProducts, status } = useSelector(
+    (state) => state.heroProducts
+  );
 
   // Call fetchData on component mount
   useEffect(() => {
     //Dispatch an action for fetchProducts
-    dispatch(getProducts());
+    dispatch(getHeroProducts());
   }, []);
 
   if (status === StatusCode.LOADING) {
@@ -24,13 +25,9 @@ const ProductCard = () => {
     return <p>Something went wrong! Try agin later</p>;
   }
 
-  const addToCart = (product) => {
-    dispatch(add(product));
-  };
-
   return (
     <div className="flex flex-col items-center justify-center gap-5 lg:flex lg:flex-row lg:flex-wrap">
-      {products.map((product) => (
+      {heroProducts.map((product) => (
         <Card
           key={product.id}
           className="max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg border-none shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105"
@@ -51,7 +48,7 @@ const ProductCard = () => {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xl font-bold">${product.price}</span>
-              <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+              <Button>Add to Cart</Button>
             </div>
           </CardContent>
         </Card>
@@ -60,4 +57,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default HeroSection;

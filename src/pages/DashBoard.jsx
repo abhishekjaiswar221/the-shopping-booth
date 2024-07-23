@@ -1,5 +1,6 @@
 import React from "react";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/component/ProductCard";
+import HeroSection from "@/components/component/HeroSection";
 
 const ProductsDashboard = () => {
   return (
@@ -7,6 +8,7 @@ const ProductsDashboard = () => {
       {/* <h2 className="text-3xl font-semibold tracking-tight text-center py-1x0 scroll-m-20 first:mt-0">
         Product Dashboard
       </h2> */}
+      <HeroSection />
       <ProductCard />
     </div>
   );
