@@ -47,7 +47,7 @@ const ProductCard = () => {
         // </Card>
         <Card
           key={product.id}
-          className=" max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105"
+          className="max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg border-none shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105"
         >
           <img
             src={product.thumbnail}
