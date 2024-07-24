@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart, UserRound, Search } from "lucide-react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const HeaderNavigation = () => {
-  const totalProducts = useSelector((state) => state.cart);
+  // const totalProducts = useSelector((state) => state.cart);
   return (
     <div>
       <header className="hidden border-b-2 border-gray-200 bg-secondary lg:block">
@@ -20,22 +20,22 @@ const HeaderNavigation = () => {
               {/* Section Two */}
               <div className="flex items-center justify-start gap-10">
                 <li>
-                  <Link to="men">Home</Link>
-                </li>
-                <li>
                   <Link to="men">Men</Link>
                 </li>
                 <li>
                   <Link to="women">Women</Link>
                 </li>
                 <li>
-                  <Link to="technology">Technology</Link>
+                  <Link to="/">Beauty</Link>
                 </li>
                 <li>
                   <Link to="home-kitchen">Home & Kitchen</Link>
                 </li>
                 <li>
                   <Link to="groceries">Groceries</Link>
+                </li>
+                <li>
+                  <Link to="technology">Technology</Link>
                 </li>
               </div>
               {/* Section Three */}
@@ -49,10 +49,10 @@ const HeaderNavigation = () => {
                       <ShoppingCart size={22} strokeWidth={1.5} />
                     </Link>
                   </div>
-                  <div>{totalProducts.length}</div>
+                  {/* <div>{totalProducts.length}</div> */}
                 </div>
                 <div>
-                  <Link to="sign-up">
+                  <Link to="/sign-up">
                     <UserRound
                       className="cursor-pointer"
                       size={22}
@@ -71,22 +71,22 @@ const HeaderNavigation = () => {
           <div>
             <ul className="flex flex-col items-start justify-center w-full gap-4 p-5 text-lg text-black bg-secondary">
               <li>
-                <Link to="men">Home</Link>
-              </li>
-              <li>
                 <Link to="men">Men</Link>
               </li>
               <li>
                 <Link to="women">Women</Link>
               </li>
               <li>
-                <Link to="technology">Technology</Link>
+                <Link to="/">Beauty</Link>
               </li>
               <li>
                 <Link to="home-kitchen">Home & Kitchen</Link>
               </li>
               <li>
                 <Link to="groceries">Groceries</Link>
+              </li>
+              <li>
+                <Link to="technology">Technology</Link>
               </li>
             </ul>
           </div>
