@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Cart from "./pages/Cart";
-import DashBoard from "./pages/DashBoard";
+import Home from "./pages/Home";
 import AppLayout from "./components/layouts/AppLayout";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
@@ -17,7 +17,7 @@ const App = () => {
       <Route path="/" element={<AppLayout />}>
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
-        <Route index element={<DashBoard />} />
+        <Route index element={<Home />} />
         <Route path="/cart" element={<Cart />} />
       </Route>
     )

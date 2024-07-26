@@ -15,11 +15,11 @@ const SignIn = () => {
   return (
     <>
       <div className="flex items-center justify-center h-screen">
-        <Card className="max-w-sm mx-auto">
+        <Card className="max-w-sm mx-auto w-[350px]">
           <CardHeader>
             <CardTitle className="text-2xl">Sign In</CardTitle>
             <CardDescription>
-              Enter your email below to login to your account
+              Enter your Credentials to access your account
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -29,7 +29,7 @@ const SignIn = () => {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
@@ -37,7 +37,12 @@ const SignIn = () => {
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                />
               </div>
               <Button type="submit" className="w-full">
                 Sign In
@@ -45,8 +50,8 @@ const SignIn = () => {
             </div>
             <div className="mt-4 text-sm text-center">
               Don&apos;t have an account?{" "}
-              <Link href="#" className="underline">
-                Sign up
+              <Link to="/sign-up" className="underline">
+                Sign Up
               </Link>
             </div>
           </CardContent>
