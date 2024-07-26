@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart, UserRound, Search } from "lucide-react";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const HeaderNavigation = () => {
-  // const totalProducts = useSelector((state) => state.cart);
+  const totalProducts = useSelector((state) => state.cart);
   return (
     <div>
       <header className="hidden border-b-2 border-gray-200 bg-secondary lg:block">
@@ -49,7 +49,7 @@ const HeaderNavigation = () => {
                       <ShoppingCart size={22} strokeWidth={1.5} />
                     </Link>
                   </div>
-                  {/* <div>{totalProducts.length}</div> */}
+                  <div>{totalProducts.length}</div>
                 </div>
                 <div>
                   <Link to="/sign-up">

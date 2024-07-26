@@ -13,10 +13,6 @@
 
 // export default store;
 
-// import postsReducer from "../features/posts/postsSlice";
-// import usersReducer from "../features/users/usersSlice";
-// import notificationsReducer from "../features/notifications/notificationsSlice";
-
 // New Way*******************************************************************
 import { configureStore } from "@reduxjs/toolkit";
 import cartSlice from "./cartSlice";
