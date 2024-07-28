@@ -79,7 +79,13 @@ const ProductSection = () => {
   } else if (isSuccess) {
     const { products } = data;
     content = products.map((product) => (
-      <ProductCard key={product.id} product={product} addToCart={addToCart} />
+      <ProductCard
+        key={product.id}
+        product={product}
+        addToCart={addToCart}
+        btnText={"Add to Cart"}
+        property={"add"}
+      />
     ));
   } else if (isError) {
     content = <p>Something went wrong! Try again later</p>;

@@ -2,8 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useToast } from "@/components/ui/use-toast";
 
-const ProductCard = ({ product, addToCart }) => {
+const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
+  const { toast } = useToast();
+
+  const handleClick = () => {
+    if (property === "add") {
+      addToCart(product);
+      toast({
+        description: "Your product is added to the cart.",
+      });
+    } else if (property === "remove") {
+      removeItem(product.id);
+      toast({
+        description: "Your product is removed from the cart.",
+      });
+    }
+  };
+
   return (
     <>
       <Card
@@ -26,8 +43,7 @@ const ProductCard = ({ product, addToCart }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold">${product.price}</span>
-            <Button onClick={() => addToCart(product)}>Add to Cart</Button>
-            {/* <Button>Add to Cart</Button> */}
+            <Button onClick={handleClick}>{btnText}</Button>
           </div>
         </CardContent>
       </Card>
@@ -36,7 +52,10 @@ const ProductCard = ({ product, addToCart }) => {
 };
 ProductCard.propTypes = {
   product: PropTypes.object.isRequired,
-  addToCart: PropTypes.func.isRequired,
+  addToCart: PropTypes.func,
+  removeItem: PropTypes.func,
+  btnText: PropTypes.string.isRequired,
+  property: PropTypes.string.isRequired,
 };
 
 export default ProductCard;
