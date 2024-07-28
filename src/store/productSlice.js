@@ -48,11 +48,13 @@ export const productSlice = createApi({
     // The `getPosts` endpoint is a "query" operation that returns data
     getAllProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
-      query: () => "/products",
+      query: () =>
+        "/products?limit=18&select=id,thumbnail,title,description,price",
     }),
     getHomeDecorProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
-      query: () => "/products/category/home-decoration",
+      query: () =>
+        "/products/category/home-decoration?limit=18&select=id,thumbnail,title,description,price",
     }),
   }),
 });

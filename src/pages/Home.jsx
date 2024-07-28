@@ -44,15 +44,15 @@
 // export default Home;
 
 // New Way*******************************************************************
-import HeroCard from "@/components/component/HeroCard";
-import ProductCard from "@/components/component/ProductCard";
+import HeroSection from "@/components/component/HeroSection";
+import ProductSection from "@/components/component/ProductSection";
 import React from "react";
 
 const Home = () => {
   return (
     <div>
-      <HeroCard />
-      <ProductCard />
+      <HeroSection />
+      <ProductSection />
     </div>
   );
 };
