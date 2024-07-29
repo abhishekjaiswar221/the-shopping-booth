@@ -19,7 +19,8 @@ const HeaderNavigation = () => {
   };
 
   return (
-    <div className="fixed top-0 z-10 w-full shadow-sm">
+    // <div className="fixed top-0 z-10 w-full shadow-sm">
+    <div className="w-full shadow-sm ">
       {/* Navbar for Mobile */}
       <div className="lg:hidden">
         <header>

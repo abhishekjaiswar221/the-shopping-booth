@@ -49,12 +49,12 @@ export const productSlice = createApi({
     getAllProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
       query: () =>
-        "/products?limit=18&select=id,thumbnail,title,description,price",
+        "/products?limit=24&select=id,thumbnail,title,description,price",
     }),
     getHomeDecorProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
       query: () =>
-        "/products/category/home-decoration?limit=18&select=id,thumbnail,title,description,price",
+        "/products/category/home-decoration?limit=5&skip=3&select=id,thumbnail,title,description,price",
     }),
   }),
 });

@@ -25,7 +25,7 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
     <>
       <Card
         key={product.id}
-        className="max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg border-none shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105 relative top-20"
+        className="max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg border-none shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105"
       >
         <img
           src={product.thumbnail}
