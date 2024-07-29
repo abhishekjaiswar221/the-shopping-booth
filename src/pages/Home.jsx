@@ -44,14 +44,18 @@
 // export default Home;
 
 // New Way*******************************************************************
-import HeroSection from "@/components/component/HeroSection";
+import HeroCardCarousel from "@/components/component/HeroCardCarousel";
+// import HeroSection from "@/components/component/HeroSection";
 import ProductSection from "@/components/component/ProductSection";
 import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <HeroSection />
+    <div className="flex flex-col items-center justify-center gap-10">
+      <div className="flex flex-row items-center justify-center gap-10">
+        <HeroCardCarousel />
+        {/* <HeroSection /> */}
+      </div>
       <ProductSection />
     </div>
   );

@@ -14,7 +14,7 @@ const AppLayout = () => {
       <Provider store={store}>
         {/* Your header content */}
         {!hideHeaderFooter && <HeaderNavigation />}
-        <main>
+        <main className="px-20">
           {/* Child routes will render here */}
           <Outlet />
           <Toaster />

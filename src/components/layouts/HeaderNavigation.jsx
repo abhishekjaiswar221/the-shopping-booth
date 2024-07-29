@@ -19,7 +19,8 @@ const HeaderNavigation = () => {
   };
 
   return (
-    <div className="fixed top-0 z-10 w-full shadow-sm">
+    // <div className="fixed top-0 z-10 w-full shadow-sm">
+    <div className="w-full shadow-sm ">
       {/* Navbar for Mobile */}
       <div className="lg:hidden">
         <header>
@@ -28,13 +29,13 @@ const HeaderNavigation = () => {
               <div onClick={toggleMenu}>
                 {/* Ternary Operator-->Condition? True: False */}
                 {menuBar ? ( //condition
-                  <X size={18} strokeWidth={1.5} /> //true-->clicked
+                  <X size={20} strokeWidth={1.5} /> //true-->clicked
                 ) : (
-                  <Menu size={18} strokeWidth={1.5} /> //false-->not clicked
+                  <Menu size={20} strokeWidth={1.5} /> //false-->not clicked
                 )}
               </div>
               <div>
-                <Search size={18} strokeWidth={1.5} />
+                <Search size={20} strokeWidth={1.5} />
               </div>
             </div>
             <div>
@@ -48,10 +49,10 @@ const HeaderNavigation = () => {
             </div>
             <div className="flex items-center justify-center gap-5">
               <div>
-                <ShoppingCart size={18} strokeWidth={1.5} />
+                <ShoppingCart size={20} strokeWidth={1.5} />
               </div>
               <div>
-                <CircleUserRound size={18} strokeWidth={1.5} />
+                <CircleUserRound size={20} strokeWidth={1.5} />
               </div>
             </div>
           </nav>
@@ -60,22 +61,28 @@ const HeaderNavigation = () => {
             <div>
               <ul className="flex flex-col items-start justify-center w-full gap-4 p-5 text-lg text-black bg-gray-100">
                 <li>
-                  <Link to="men">Men</Link>
+                  <Link to="/men">Men</Link>
                 </li>
                 <li>
-                  <Link to="women">Women</Link>
+                  <Link to="/women">Women</Link>
                 </li>
                 <li>
-                  <Link to="/">Beauty</Link>
+                  <Link to="/beauty">Beauty</Link>
                 </li>
                 <li>
-                  <Link to="home-kitchen">Home & Kitchen</Link>
+                  <Link to="/home-kitchen">Home & Kitchen</Link>
                 </li>
                 <li>
-                  <Link to="groceries">Groceries</Link>
+                  <Link to="/groceries">Groceries</Link>
                 </li>
                 <li>
-                  <Link to="technology">Technology</Link>
+                  <Link to="/technology">Technology</Link>
+                </li>
+                <li>
+                  <Link to="/sign-in">Sign In</Link>
+                </li>
+                <li>
+                  <Link to="/sign-up">Sign Up</Link>
                 </li>
               </ul>
             </div>
@@ -98,22 +105,22 @@ const HeaderNavigation = () => {
                 {/* Section Two */}
                 <div className="flex items-center justify-start gap-10">
                   <li>
-                    <Link to="men">Men</Link>
+                    <Link to="/men">Men</Link>
                   </li>
                   <li>
-                    <Link to="women">Women</Link>
+                    <Link to="/women">Women</Link>
                   </li>
                   <li>
-                    <Link to="/">Beauty</Link>
+                    <Link to="/beauty">Beauty</Link>
                   </li>
                   <li>
-                    <Link to="home-kitchen">Home & Kitchen</Link>
+                    <Link to="/home-kitchen">Home & Kitchen</Link>
                   </li>
                   <li>
-                    <Link to="groceries">Groceries</Link>
+                    <Link to="/groceries">Groceries</Link>
                   </li>
                   <li>
-                    <Link to="technology">Technology</Link>
+                    <Link to="/technology">Technology</Link>
                   </li>
                 </div>
                 {/* Section Three */}
