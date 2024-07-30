@@ -2,11 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "@/store/cartSlice";
 import ProductCard from "@/components/component/ProductCard";
+import EmptyCart from "@/components/component/EmptyCart";
 
 const Cart = () => {
   const cartProducts = useSelector((state) => state.cart);
   if (cartProducts.length === 0) {
-    return <p>No products in the cart</p>;
+    return <EmptyCart />;
   }
   const dispatch = useDispatch((state) => state.cart);
   const removeItem = (id) => {

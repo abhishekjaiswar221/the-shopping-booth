@@ -48,8 +48,13 @@ const HeaderNavigation = () => {
               </picture>
             </div>
             <div className="flex items-center justify-center gap-5">
-              <div>
-                <ShoppingCart size={20} strokeWidth={1.5} />
+              <div className="flex items-center justify-center gap-2">
+                <div>
+                  <Link to="/cart">
+                    <ShoppingCart size={22} strokeWidth={1.5} />
+                  </Link>
+                </div>
+                <div>{totalProducts.length}</div>
               </div>
               <div>
                 <CircleUserRound size={20} strokeWidth={1.5} />
