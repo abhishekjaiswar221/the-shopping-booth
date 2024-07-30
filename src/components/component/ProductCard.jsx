@@ -32,7 +32,7 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
           <img
             src={product.thumbnail}
             alt={product.title}
-            className="object-cover w-full bg-gray-100 rounded-lg h-72"
+            className="object-cover w-full bg-[#eeeeee] rounded-lg h-72"
           />
         </div>
         <CardContent className="p-4 space-y-2">
@@ -48,9 +48,9 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold">${product.price}</span>
-            {/* <Button className="rounded-full" onClick={handleClick}>
+            <Button className="rounded-full" onClick={handleClick}>
               {btnText}
-            </Button> */}
+            </Button>
           </div>
         </CardContent>
         <div className="absolute flex items-center justify-center w-10 h-10 border rounded-full border-primary top-3 right-3 bg-secondary">
