@@ -5,6 +5,9 @@ import ProductCard from "@/components/component/ProductCard";
 
 const Cart = () => {
   const cartProducts = useSelector((state) => state.cart);
+  if (cartProducts.length === 0) {
+    return <p>No products in the cart</p>;
+  }
   const dispatch = useDispatch((state) => state.cart);
   const removeItem = (id) => {
     dispatch(remove(id));

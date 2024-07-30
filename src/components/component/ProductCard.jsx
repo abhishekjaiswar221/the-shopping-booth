@@ -48,9 +48,9 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold">${product.price}</span>
-            {/* <Button className="rounded-full" onClick={handleClick}>
+            <Button className="rounded-full" onClick={handleClick}>
               {btnText}
-            </Button> */}
+            </Button>
           </div>
         </CardContent>
         <div className="absolute flex items-center justify-center w-10 h-10 border rounded-full border-primary top-3 right-3 bg-secondary">
