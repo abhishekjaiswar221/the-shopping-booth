@@ -8,7 +8,7 @@ const EmptyCart = () => {
       {/* <div className="flex items-center">
         <h1 className="text-lg font-semibold md:text-2xl">Inventory</h1>
       </div> */}
-      <div className="flex items-center justify-center flex-1 border rounded-lg shadow-sm">
+      <div className="flex items-center justify-center flex-1">
         <div className="flex flex-col items-center gap-1 text-center">
           <h3 className="text-2xl font-bold tracking-tight">
             You have no products
