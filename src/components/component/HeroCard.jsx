@@ -10,8 +10,8 @@ import { Button } from "../ui/button";
 
 const HeroCard = () => {
   return (
-    <div className="p-1">
-      <Card className="relative h-[400px] shadow bg-[#eeeeee] w-[450px]">
+    <div className="hidden p-1 lg:block">
+      <Card className="relative border-none shadow-none h-[400px] w-[400px] bg-gray-100">
         <CardHeader className="p-0">
           <img
             className="w-full"
@@ -24,7 +24,12 @@ const HeroCard = () => {
             <CardTitle>Bike</CardTitle>
             <CardDescription>Bajaj</CardDescription>
           </div>
-          <Button className="rounded-full">Add to cart</Button>
+          <Button className="rounded-full">
+            Add to cart{" "}
+            <span className="px-2 text-[13px] text-muted-foreground">
+              $10.99
+            </span>{" "}
+          </Button>
         </CardContent>
       </Card>
     </div>

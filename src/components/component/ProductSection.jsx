@@ -1,6 +1,6 @@
 // import React from "react";
 // import { add } from "@/store/cartSlice";
-// import StatusCode from "@/utils/StatusCode";
+// import HTTPStatus from "@/utils/HTTPStatus";
 // import { getProducts } from "@/store/productSlice";
 // import { useDispatch, useSelector } from "react-redux";
 
@@ -14,11 +14,11 @@
 //     dispatch(getProducts());
 //   }, []);
 
-//   if (status === StatusCode.LOADING) {
+//   if (status === HTTPStatus.LOADING) {
 //     return <p>Loading...</p>;
 //   }
 
-//   if (status === StatusCode.ERROR) {
+//   if (status === HTTPStatus.ERROR) {
 //     return <p>Something went wrong! Try agin later</p>;
 //   }
 
@@ -91,7 +91,7 @@ const ProductSection = () => {
     content = <p>Something went wrong! Try again later</p>;
   }
   return (
-    <div className="flex flex-col items-center justify-center gap-5 lg:flex lg:flex-row lg:flex-wrap">
+    <div className="flex flex-col items-center justify-between gap-12 lg:gap-5 lg:flex lg:flex-row lg:flex-wrap">
       {content}
     </div>
   );

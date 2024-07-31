@@ -1,10 +1,10 @@
 // import axios from "axios";
-// import StatusCode from "@/utils/StatusCode";
+// import HTTPStatus from "@/utils/HTTPStatus";
 // import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // const initialState = {
 //   data: [],
-//   status: StatusCode.IDEAL,
+//   status: HTTPStatus.IDEAL,
 // };
 
 // const productSlice = createSlice({
@@ -13,14 +13,14 @@
 //   extraReducers: (builder) => {
 //     builder
 //       .addCase(getProducts.pending, (state) => {
-//         state.status = StatusCode.LOADING;
+//         state.status = HTTPStatus.LOADING;
 //       })
 //       .addCase(getProducts.fulfilled, (state, action) => {
-//         state.status = StatusCode.IDEAL;
+//         state.status = HTTPStatus.IDEAL;
 //         state.data = action.payload;
 //       })
 //       .addCase(getProducts.rejected, (state) => {
-//         state.status = StatusCode.ERROR;
+//         state.status = HTTPStatus.ERROR;
 //       });
 //   },
 // });
@@ -49,12 +49,12 @@ export const productSlice = createApi({
     getAllProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
       query: () =>
-        "/products?limit=24&select=id,thumbnail,title,description,price,brand",
+        "/products/category/laptops?limit=4&select=id,thumbnail,title,price,brand",
     }),
     getHomeDecorProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
       query: () =>
-        "/products/category/home-decoration?limit=5&skip=3&select=id,thumbnail,title,description,price",
+        "/products/category/home-decoration?limit=5&skip=3&select=id,thumbnail,title,price,brand",
     }),
   }),
 });

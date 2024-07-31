@@ -1,6 +1,6 @@
-const StatusCode = {
+const HTTPStatus = {
   LOADING: "pending",
   IDEAL: "ideal",
   ERROR: "error",
 };
-export default StatusCode;
+export default HTTPStatus;

@@ -1,10 +1,10 @@
-import StatusCode from "@/utils/StatusCode";
+import HTTPStatus from "@/utils/HTTPStatus";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
   data: [],
-  status: StatusCode.IDEAL,
+  status: HTTPStatus.IDEAL,
 };
 
 const carouselSlice = createSlice({
@@ -13,14 +13,14 @@ const carouselSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCarouselProducts.pending, (state) => {
-        state.status = StatusCode.LOADING;
+        state.status = HTTPStatus.LOADING;
       })
       .addCase(getCarouselProducts.fulfilled, (state, action) => {
-        state.status = StatusCode.IDEAL;
+        state.status = HTTPStatus.IDEAL;
         state.data = action.payload;
       })
       .addCase(getCarouselProducts.rejected, (state) => {
-        state.status = StatusCode.ERROR;
+        state.status = HTTPStatus.ERROR;
       });
   },
 });
