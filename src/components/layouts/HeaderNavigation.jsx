@@ -23,7 +23,7 @@ const HeaderNavigation = () => {
       {/* Navbar for Mobile */}
       <div className="lg:hidden">
         <header>
-          <nav className="flex items-center border-b border-[#e6e6e6] justify-around sm:justify-between sm:px-5 w-full h-14 bg-white">
+          <nav className="flex items-center border-b border-[#e6e6e6] justify-between w-full h-14 bg-white px-5">
             <div className="flex items-center justify-center gap-5">
               <div onClick={toggleMenu}>
                 {/* Ternary Operator-->Condition? True: False */}
@@ -47,16 +47,16 @@ const HeaderNavigation = () => {
               </picture>
             </div>
             <div className="flex items-center justify-center gap-5">
-              <div className="flex items-center justify-center gap-2">
+              <div className="gap-2 md:flex md:items-center md:justify-center">
                 <div>
                   <Link to="/cart">
                     <ShoppingCart size={22} strokeWidth={1.5} />
                   </Link>
                 </div>
-                <div>{totalProducts.length}</div>
+                <div className="hidden md:block">{totalProducts.length}</div>
               </div>
               <div>
-                <CircleUserRound size={20} strokeWidth={1.5} />
+                <CircleUserRound size={22} strokeWidth={1.5} />
               </div>
             </div>
           </nav>

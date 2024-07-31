@@ -55,19 +55,19 @@ import React from "react";
 const Home = () => {
   return (
     <div className="flex flex-col items-stretch justify-center gap-24">
-      <div className="flex flex-row items-center justify-between gap-5">
+      <div className="lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-5">
         <HeroCardCarousel />
         <HeroCard />
         {/* <HeroSection /> */}
       </div>
       <div className="space-y-10">
-        <div className="flex items-center justify-between">
+        <div className="lg:flex lg:items-center lg:justify-between">
           <div>
             <h3 className="text-2xl font-semibold tracking-tight scroll-m-20">
               Popular Products
             </h3>
           </div>
-          <div className="space-x-1">
+          <div className="hidden space-x-1 lg:block">
             <Button
               variant={"outline"}
               className="border border-black rounded-full"

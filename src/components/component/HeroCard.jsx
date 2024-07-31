@@ -10,8 +10,8 @@ import { Button } from "../ui/button";
 
 const HeroCard = () => {
   return (
-    <div className="p-1">
-      <Card className="relative h-[400px] w-[400px] shadow bg-gray-100">
+    <div className="hidden p-1 lg:block">
+      <Card className="relative border-none shadow-none h-[400px] w-[400px] bg-gray-100">
         <CardHeader className="p-0">
           <img
             className="w-full"

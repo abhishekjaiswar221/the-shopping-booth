@@ -11,6 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useDispatch, useSelector } from "react-redux";
 import HTTPStatus from "@/utils/HTTPStatus";
 import { getCarouselProducts } from "@/store/carouselSlice";
+import { Heart } from "lucide-react";
 // import { Button } from "../ui/button";
 
 const HeroCardCarousel = () => {
@@ -48,7 +49,14 @@ const HeroCardCarousel = () => {
         {products.map((product) => (
           <CarouselItem key={product.id}>
             <div className="p-1">
-              <Card className="h-[400px] text-center content-center bg-gray-100">
+              <Card className="md:h-[400px] border-none shadow-none p-0 text-center rounded-lg content-center bg-gray-100 relative">
+                <div className="absolute flex items-center justify-center w-10 h-10 bg-white rounded-full top-3 right-3">
+                  <Heart
+                    className="text-primary fill-primary"
+                    size={20}
+                    strokeWidth={1.5}
+                  />
+                </div>
                 <CardContent className="relative flex flex-col items-center justify-center w-full p-6">
                   <div>
                     <img
@@ -71,8 +79,8 @@ const HeroCardCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="h-10 w-10 absolute top-[200px] left-5" />
-      <CarouselNext className="h-10 w-10 absolute top-[200px] right-5" />
+      <CarouselPrevious className="md:h-10 md:w-10 absolute top-[300px] md:top-[200px] left-5" />
+      <CarouselNext className="md:h-10 md:w-10 absolute top-[300px] md:top-[200px] right-5" />
     </Carousel>
   );
 };

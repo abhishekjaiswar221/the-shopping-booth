@@ -91,7 +91,7 @@ const ProductSection = () => {
     content = <p>Something went wrong! Try again later</p>;
   }
   return (
-    <div className="flex flex-col items-center justify-between gap-5 lg:flex lg:flex-row lg:flex-wrap">
+    <div className="flex flex-col items-center justify-between gap-12 lg:gap-5 lg:flex lg:flex-row lg:flex-wrap">
       {content}
     </div>
   );

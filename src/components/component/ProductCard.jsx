@@ -48,7 +48,7 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
             <img
               src={product.thumbnail}
               alt={product.title}
-              className="object-cover w-full bg-gray-100 rounded-lg h-72"
+              className="object-cover w-full bg-gray-100 rounded-lg lg:h-72"
             />
           </picture>
         </CardHeader>
