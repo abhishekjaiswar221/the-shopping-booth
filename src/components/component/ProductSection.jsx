@@ -1,6 +1,6 @@
 // import React from "react";
 // import { add } from "@/store/cartSlice";
-// import StatusCode from "@/utils/StatusCode";
+// import HTTPStatus from "@/utils/HTTPStatus";
 // import { getProducts } from "@/store/productSlice";
 // import { useDispatch, useSelector } from "react-redux";
 
@@ -14,11 +14,11 @@
 //     dispatch(getProducts());
 //   }, []);
 
-//   if (status === StatusCode.LOADING) {
+//   if (status === HTTPStatus.LOADING) {
 //     return <p>Loading...</p>;
 //   }
 
-//   if (status === StatusCode.ERROR) {
+//   if (status === HTTPStatus.ERROR) {
 //     return <p>Something went wrong! Try agin later</p>;
 //   }
 

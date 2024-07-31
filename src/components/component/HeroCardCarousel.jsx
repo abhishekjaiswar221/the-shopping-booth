@@ -9,7 +9,7 @@ import {
 import { Card, CardContent } from "../ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { useDispatch, useSelector } from "react-redux";
-import StatusCode from "@/utils/StatusCode";
+import HTTPStatus from "@/utils/HTTPStatus";
 import { getCarouselProducts } from "@/store/carouselSlice";
 // import { Button } from "../ui/button";
 
@@ -23,11 +23,11 @@ const HeroCardCarousel = () => {
     dispatch(getCarouselProducts());
   }, []);
 
-  if (status === StatusCode.LOADING) {
+  if (status === HTTPStatus.LOADING) {
     return <p>Loading...</p>;
   }
 
-  if (status === StatusCode.ERROR) {
+  if (status === HTTPStatus.ERROR) {
     return <p>Something went wrong! Try agin later</p>;
   }
 

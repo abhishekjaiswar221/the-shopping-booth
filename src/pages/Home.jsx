@@ -3,7 +3,7 @@
 // import ProductCard from "@/components/component/ProductCard";
 // import { add } from "@/store/cartSlice";
 // import { getProducts } from "@/store/productSlice";
-// import StatusCode from "@/utils/StatusCode";
+// import HTTPStatus from "@/utils/HTTPStatus";
 // import React, { useEffect } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 
@@ -17,11 +17,11 @@
 //     dispatch(getProducts());
 //   }, []);
 
-//   if (status === StatusCode.LOADING) {
+//   if (status === HTTPStatus.LOADING) {
 //     return <p>Loading...</p>;
 //   }
 
-//   if (status === StatusCode.ERROR) {
+//   if (status === HTTPStatus.ERROR) {
 //     return <p>Something went wrong! Try agin later</p>;
 //   }
 
@@ -49,7 +49,7 @@ import HeroCardCarousel from "@/components/component/HeroCardCarousel";
 // import HeroSection from "@/components/component/HeroSection";
 import ProductSection from "@/components/component/ProductSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import React from "react";
 
 const Home = () => {
@@ -112,9 +112,9 @@ const Home = () => {
           </div>
           <div>
             <Button className="rounded-full w-44">
-              See all{" "}
-              <span>
-                <ArrowRight size={22} strokeWidth={1.5} />
+              See all{"   "}
+              <span className="px-2">
+                <MoveRight size={18} strokeWidth={1.5} />
               </span>
             </Button>
           </div>
