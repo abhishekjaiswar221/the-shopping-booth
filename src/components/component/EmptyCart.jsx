@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const EmptyCart = () => {
   return (
-    <main className="flex flex-col flex-1 gap-4 py-4 h-[690px] lg:gap-6 lg:py-6">
+    <main className="flex flex-col flex-1 gap-4 py-4 h-[645px] lg:gap-6 lg:py-6">
       {/* <div className="flex items-center">
         <h1 className="text-lg font-semibold md:text-2xl">Inventory</h1>
       </div> */}

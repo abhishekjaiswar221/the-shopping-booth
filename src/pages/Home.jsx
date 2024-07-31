@@ -48,18 +48,77 @@ import HeroCard from "@/components/component/HeroCard";
 import HeroCardCarousel from "@/components/component/HeroCardCarousel";
 // import HeroSection from "@/components/component/HeroSection";
 import ProductSection from "@/components/component/ProductSection";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import React from "react";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-10">
-      <div className="flex flex-row items-center justify-between gap-2">
+    <div className="flex flex-col items-stretch justify-center gap-24">
+      <div className="flex flex-row items-center justify-between gap-5">
         <HeroCardCarousel />
-        {/* <HeroSection /> */}
         <HeroCard />
+        {/* <HeroSection /> */}
       </div>
-      <div>
-        <ProductSection />
+      <div className="space-y-10">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-2xl font-semibold tracking-tight scroll-m-20">
+              Popular Products
+            </h3>
+          </div>
+          <div className="space-x-1">
+            <Button
+              variant={"outline"}
+              className="border border-black rounded-full"
+            >
+              Clothes & Shoes
+            </Button>
+            <Button className="rounded-full">Electronics</Button>
+            <Button
+              variant={"outline"}
+              className="border border-black rounded-full"
+            >
+              Sports goods
+            </Button>
+            <Button
+              variant={"outline"}
+              className="border border-black rounded-full"
+            >
+              Children&apos;s goods
+            </Button>
+            <Button
+              variant={"outline"}
+              className="border border-black rounded-full"
+            >
+              Beauty
+            </Button>
+            <Button
+              variant={"outline"}
+              className="border border-black rounded-full"
+            >
+              Furniture
+            </Button>
+          </div>
+        </div>
+        <div>
+          <ProductSection />
+        </div>
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-lg text-muted-foreground">
+              1604 trending products <br /> in 16 categories
+            </p>
+          </div>
+          <div>
+            <Button className="rounded-full w-44">
+              See all{" "}
+              <span>
+                <ArrowRight size={22} strokeWidth={1.5} />
+              </span>
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
