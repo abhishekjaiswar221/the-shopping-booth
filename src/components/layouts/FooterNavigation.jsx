@@ -5,25 +5,24 @@ import { Link } from "react-router-dom";
 
 const FooterNavigation = () => {
   return (
-    <footer className="bg-gray-100">
+    <footer className="bg-[#212121]">
       <div className="container px-4 py-12 md:px-6 lg:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="#" className="flex items-center gap-2">
-              {/* <MountainIcon className="w-6 h-6" /> */}
-              <h4 className="text-lg font-medium text-muted-foreground">
+              <h4 className="text-lg font-medium text-white">
                 The Shopping Booth
               </h4>
             </Link>
-            <p className="text-sm leading-relaxed">
+            <p className="text-base leading-relaxed text-[#dbdbdb]">
               Discover the best products for your home, office, and lifestyle.
             </p>
           </div>
           <div className="space-y-2">
-            <h4 className="text-lg font-medium text-muted-foreground">
+            <h4 className="text-lg font-medium text-white">
               Popular Categories
             </h4>
-            <nav className="grid gap-2">
+            <nav className="grid gap-2 text-base text-[#dbdbdb] hover:text-white">
               <Link href="#" className="hover:underline">
                 Electronics
               </Link>
@@ -42,10 +41,8 @@ const FooterNavigation = () => {
             </nav>
           </div>
           <div className="space-y-2">
-            <h4 className="text-lg font-medium text-muted-foreground">
-              Quick Links
-            </h4>
-            <nav className="grid gap-2">
+            <h4 className="text-lg font-medium text-white">Quick Links</h4>
+            <nav className="grid gap-2 text-base text-[#dbdbdb] hover:text-white">
               <Link href="#" className="hover:underline">
                 About Us
               </Link>
@@ -64,10 +61,8 @@ const FooterNavigation = () => {
             </nav>
           </div>
           <div className="space-y-4">
-            <h4 className="text-lg font-medium text-muted-foreground">
-              Newsletter
-            </h4>
-            <p className="text-sm leading-relaxed">
+            <h4 className="text-lg font-medium text-white">Newsletter</h4>
+            <p className="text-base leading-relaxed text-[#dbdbdb]">
               Subscribe to our newsletter to get the latest updates and
               exclusive offers.
             </p>
@@ -75,14 +70,16 @@ const FooterNavigation = () => {
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1"
+                className="flex-1 placeholder:text-white"
               />
-              <Button type="submit">Subscribe</Button>
+              <Button className="rounded-lg" type="submit">
+                Subscribe
+              </Button>
             </form>
           </div>
         </div>
       </div>
-      <div className="py-4 text-sm text-center border-t border-muted/40">
+      <div className="py-4 text-base text-center text-white border-t border-muted/40">
         <p>&copy; 2024 The Shopping Booth. All rights reserved.</p>
       </div>
     </footer>

@@ -44,30 +44,31 @@
 // export default Home;
 
 // New Way*******************************************************************
-import HeroCard from "@/components/component/HeroCard";
+// import HeroCard from "@/components/component/HeroCard";
 import HeroCardCarousel from "@/components/component/HeroCardCarousel";
 // import HeroSection from "@/components/component/HeroSection";
 import ProductSection from "@/components/component/ProductSection";
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-stretch justify-center gap-24">
-      <div className="lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-5">
+    <div className="flex flex-col items-stretch justify-center gap-16 py-16">
+      <div className="p-2 m-5 bg-white rounded-xl md:p-4 xl:m-8">
         <HeroCardCarousel />
-        <HeroCard />
+        {/* <HeroCard /> */}
         {/* <HeroSection /> */}
       </div>
-      <div className="space-y-10">
+      <div className="px-5 space-y-10 lg:px-10 xl:px-20">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div>
             <h3 className="text-2xl font-semibold tracking-tight scroll-m-20">
               Popular Products
             </h3>
           </div>
-          <div className="hidden space-x-1 lg:block">
+          <div className="hidden space-x-1 xl:block">
             <Button
               variant={"outline"}
               className="border border-black rounded-full"
@@ -101,7 +102,7 @@ const Home = () => {
             </Button>
           </div>
         </div>
-        <div>
+        <div className="p-6 bg-white md:p-8 xl:p-6 rounded-xl">
           <ProductSection />
         </div>
         <div className="flex items-center justify-between">
@@ -111,11 +112,15 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <Button className="rounded-full w-44">
-              See all{"   "}
-              <span className="px-2">
-                <MoveRight size={18} strokeWidth={1.5} />
-              </span>
+            <Button asChild className="rounded-full w-44">
+              <Link to={"/cart"}>
+                See all
+                <ArrowRight
+                  className="w-4 h-4 ml-2"
+                  size={18}
+                  strokeWidth={1.5}
+                />
+              </Link>
             </Button>
           </div>
         </div>
