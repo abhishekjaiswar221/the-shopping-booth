@@ -47,12 +47,12 @@ const HeroCardCarousel = () => {
     >
       <CarouselContent>
         {products.map((product) => (
-          <CarouselItem key={product.id}>
+          <CarouselItem className="md:basis-1/2" key={product.id}>
             <div className="p-1">
-              <Card className="md:h-[400px] border-none shadow-none p-0 text-center rounded-lg content-center bg-gray-100 relative">
-                <div className="absolute flex items-center justify-center w-10 h-10 bg-white rounded-full top-3 right-3">
+              <Card className="lg:h-[400px] border-none shadow-none p-0 text-center rounded-xl content-center bg-[#f1f2f4] relative">
+                <div className="absolute flex items-center justify-center w-10 h-10 bg-white border rounded-full top-3 right-3">
                   <Heart
-                    className="text-primary fill-primary"
+                    className="text-[#e11d48] fill-[#e11d48]"
                     size={20}
                     strokeWidth={1.5}
                   />
@@ -79,8 +79,8 @@ const HeroCardCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="md:h-10 md:w-10 absolute top-[300px] md:top-[200px] left-5" />
-      <CarouselNext className="md:h-10 md:w-10 absolute top-[300px] md:top-[200px] right-5" />
+      <CarouselPrevious className="absolute rounded-xl md:w-10 md:h-10 left-3 lg:left-4 xl:right-5" />
+      <CarouselNext className="absolute rounded-xl md:w-10 md:h-10 right-3 lg:right-4 xl:right-5" />
     </Carousel>
   );
 };

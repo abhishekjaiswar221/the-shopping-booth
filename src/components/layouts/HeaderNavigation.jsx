@@ -19,11 +19,11 @@ const HeaderNavigation = () => {
   };
 
   return (
-    <div className="fixed top-0 z-10 w-full shadow-sm">
+    <div className="fixed top-0 z-10 w-full shadow-md">
       {/* Navbar for Mobile */}
       <div className="lg:hidden">
         <header>
-          <nav className="flex items-center border-b border-[#e6e6e6] justify-between w-full h-14 bg-white px-5">
+          <nav className="flex items-center bg-white border-b border-[#e6e6e6] justify-between w-full h-14 lg:h-16  px-5 md:px-6">
             <div className="flex items-center justify-center gap-5">
               <div onClick={toggleMenu}>
                 {/* Ternary Operator-->Condition? True: False */}
@@ -63,7 +63,7 @@ const HeaderNavigation = () => {
 
           {menuBar && (
             <div>
-              <ul className="flex flex-col items-start justify-center w-full gap-4 p-5 text-lg text-black bg-gray-100">
+              <ul className="flex flex-col items-start justify-center w-full gap-4 p-5 text-lg text-black bg-white">
                 <li>
                   <Link to="/men">Men</Link>
                 </li>
@@ -96,10 +96,10 @@ const HeaderNavigation = () => {
 
       {/* Navbar for Desktop */}
       <div className="hidden lg:block">
-        <header className="border-b-2 border-gray-200 bg-secondary lg:block">
+        <header className="bg-white border-b border-[#e6e6e6] lg:block">
           <nav>
-            <div className="px-20">
-              <ul className="flex items-center justify-between w-full h-14">
+            <div className="px-5 xl:px-20">
+              <ul className="flex items-center justify-between w-full h-14 lg:h-16">
                 {/* Section One */}
                 <div>
                   <Link to="/" className="text-2xl font-semibold">
@@ -130,12 +130,12 @@ const HeaderNavigation = () => {
                 {/* Section Three */}
                 <div className="flex items-center justify-center gap-3">
                   <div>
-                    <Search size={22} strokeWidth={1.5} />
+                    <Search size={24} strokeWidth={1.5} />
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <div>
                       <Link to="/cart">
-                        <ShoppingCart size={22} strokeWidth={1.5} />
+                        <ShoppingCart size={24} strokeWidth={1.5} />
                       </Link>
                     </div>
                     <div>{totalProducts.length}</div>
@@ -144,7 +144,7 @@ const HeaderNavigation = () => {
                     <Link to="/sign-up">
                       <UserRound
                         className="cursor-pointer"
-                        size={22}
+                        size={24}
                         strokeWidth={1.5}
                       />
                     </Link>

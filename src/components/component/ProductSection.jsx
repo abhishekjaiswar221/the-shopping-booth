@@ -27,16 +27,16 @@
 //   };
 
 //   return (
-//     <div className="flex flex-col items-center justify-center gap-5 lg:flex lg:flex-row lg:flex-wrap">
+//     <div className="flex flex-col items-center justify-center gap-5 md:flex md:flex-row md:flex-wrap">
 //       {products.map((product) => (
 //       <Card
 //         key={product.id}
-//         className="max-w-sm overflow-hidden transition-all duration-500 transform rounded-lg border-none shadow-md w-[335px] lg:h-[425px] lg:w-72 hover:scale-105"
+//         className="max-w-sm overflow-hidden transition-all duration-500 transform rounded-md border-none shadow-md w-[335px] md:h-[425px] md:w-72 hover:scale-105"
 //       >
 //         <img
 //           src={product.thumbnail}
 //           alt={product.title}
-//           className="object-cover w-full bg-gray-100 rounded-lg h-72"
+//           className="object-cover w-full bg-gray-100 rounded-md h-72"
 //         />
 //         <CardContent className="p-4 space-y-2">
 //           <div className="space-y-2">
@@ -91,7 +91,7 @@ const ProductSection = () => {
     content = <p>Something went wrong! Try again later</p>;
   }
   return (
-    <div className="flex flex-col items-center justify-between gap-12 lg:gap-5 lg:flex lg:flex-row lg:flex-wrap">
+    <div className="flex flex-col items-center justify-between gap-12 md:gap-8 md:flex md:flex-row md:flex-wrap lg:gap-5">
       {content}
     </div>
   );
