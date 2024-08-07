@@ -34,7 +34,7 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
     <>
       <Card
         key={product.id}
-        className="max-w-sm relative  border-none rounded-xl shadow-none w-72 md:w-[300px] lg:w-[270px] xl:w-72 h-full"
+        className="max-w-sm relative  border-none rounded-xl shadow-lg w-72 md:w-[300px] lg:w-[270px] xl:w-72 h-full pb-2"
       >
         <div className="absolute flex items-center justify-center w-10 h-10 bg-white border rounded-full top-3 right-3">
           <Heart
