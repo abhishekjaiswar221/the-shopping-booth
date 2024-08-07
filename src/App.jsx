@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import AppLayout from "./components/layouts/AppLayout";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import PageNotFound from "./components/component/PageNotFound";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route index element={<Home />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     )
   );
