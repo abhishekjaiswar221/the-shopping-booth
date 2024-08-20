@@ -49,7 +49,7 @@ export const productSlice = createApi({
     getAllProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
       query: () =>
-        "/products/category/groceries?limit=12&skip=4&select=id,thumbnail,title,price,brand",
+        "/products/category/mobile-accessories?limit=12&sortBy=title&order=asc&select=id,thumbnail,title,price,brand",
     }),
     getHomeDecorProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
