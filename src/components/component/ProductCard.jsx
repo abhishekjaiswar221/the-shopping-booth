@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -34,9 +34,9 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
     <>
       <Card
         key={product.id}
-        className="max-w-sm relative  border-none rounded-xl shadow-lg w-72 md:w-[300px] lg:w-[270px] xl:w-72 h-full pb-2"
+        className="max-w-sm relative  border-none rounded-xl shadow-none w-72 md:w-[300px] lg:w-[270px] xl:w-72 h-full"
       >
-        <div className="absolute flex items-center justify-center w-10 h-10 bg-white border rounded-full top-3 right-3">
+        <div className="absolute flex items-center justify-center w-10 h-10 bg-white rounded-full top-3 right-3">
           <Heart
             className="text-[#e11d48] fill-[#e11d48]"
             size={20}
@@ -48,7 +48,7 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
             <img
               src={product.thumbnail}
               alt={product.title}
-              className="object-cover w-full bg-[#f1f2f4] rounded-xl h-full"
+              className="object-cover w-full bg-[#eeeeee] rounded-xl h-full"
             />
           </picture>
         </CardHeader>
@@ -66,11 +66,11 @@ const ProductCard = ({ product, addToCart, removeItem, btnText, property }) => {
                 ${product.price}
               </h4>
             </div>
-            <div>
+            {/* <div>
               <Button className="rounded-lg " onClick={handleClick}>
                 {btnText}
               </Button>
-            </div>
+            </div> */}
           </div>
         </CardContent>
       </Card>

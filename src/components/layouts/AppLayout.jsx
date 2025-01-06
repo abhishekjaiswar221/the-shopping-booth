@@ -1,10 +1,10 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import HeaderNavigation from "./HeaderNavigation";
-import FooterNavigation from "./FooterNavigation";
-import { Provider } from "react-redux";
 import store from "@/store/store";
+import { Provider } from "react-redux";
 import { Toaster } from "@/components/ui/toaster";
+import { Outlet, useLocation } from "react-router-dom";
+import HeaderNavigation from "../navigation/HeaderNavigation";
+import FooterNavigation from "../navigation/FooterNavigation";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const AppLayout = () => {
       <Provider store={store}>
         {/* Your header content */}
         {!hideHeaderFooter && <HeaderNavigation />}
-        <main className="bg-[#f7f7f7]">
+        <main>
           {/* Child routes will render here */}
           <Outlet />
           <Toaster />
