@@ -3,6 +3,7 @@ import { useGetAllProductsQuery } from "@/store/productSlice";
 import { useDispatch } from "react-redux";
 import { add } from "@/store/cartSlice";
 import ProductCard from "./ProductCard";
+import { ClipLoader } from "react-spinners";
 
 const ProductSection = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,15 @@ const ProductSection = () => {
 
   let content;
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = (
+      <div className="flex items-center justify-center w-full h-full">
+        <ClipLoader
+          size={30}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </div>
+    );
   } else if (isSuccess) {
     const { products } = data;
     content = products.map((product) => (
