@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroBanner from "@/components/component/HeroBanner";
-import CategoryButton from "@/components/component/CategoryButton";
 import ProductSection from "@/components/component/ProductSection";
+import CategoryButton from "@/components/component/CategoryButton";
 
 const Home = () => {
   return (
