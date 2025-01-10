@@ -11,7 +11,7 @@ const MobileNav = () => {
     setMenuBar(!menuBar); // Toggle the value of menuBar[State]-->If true then ~true-->false if false then ~false-->true
   };
   return (
-    <header className="absolute w-full border-b border-gray-200 ">
+    <header className="w-full border-b border-gray-200 ">
       <nav className="flex items-center justify-between w-full px-5 bg-white shadow h-14 lg:h-16 md:px-6">
         <div className="flex items-center justify-center gap-5">
           <div onClick={toggleMenu}>

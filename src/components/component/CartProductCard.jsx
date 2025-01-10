@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ShoppingCart } from "lucide-react";
-import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { useToast } from "../ui/use-toast";
+import { Button } from "../ui/button";
 import { CardTitle } from "../ui/card";
+import { useToast } from "../ui/use-toast";
+import { Minus, Plus, Trash2 } from "lucide-react";
 
-const CartProductCard = ({ product, updateQuantity, removeItem }) => {
+const CartProductCard = ({ product, handleUpdateQuantity, removeItem }) => {
   const { toast } = useToast();
   const handleClick = () => {
     removeItem(product.id);
@@ -39,16 +39,19 @@ const CartProductCard = ({ product, updateQuantity, removeItem }) => {
                   variant="outline"
                   size="sm"
                   onClick={() =>
-                    updateQuantity(product.id, product.minimumOrderQuantity - 1)
+                    handleUpdateQuantity(
+                      product.id,
+                      product.minimumOrderQuantity - 1
+                    )
                   }
                 >
-                  -
+                  <Minus className="w-4 h-4" />
                 </Button>
                 <Input
                   type="number"
                   value={product.minimumOrderQuantity}
                   onChange={(e) =>
-                    updateQuantity(product.id, parseInt(e.target.value))
+                    handleUpdateQuantity(product.id, parseInt(e.target.value))
                   }
                   className="w-16 h-8 text-center"
                   min="0"
@@ -57,10 +60,13 @@ const CartProductCard = ({ product, updateQuantity, removeItem }) => {
                   variant="outline"
                   size="sm"
                   onClick={() =>
-                    updateQuantity(product.id, product.minimumOrderQuantity + 1)
+                    handleUpdateQuantity(
+                      product.id,
+                      product.minimumOrderQuantity + 1
+                    )
                   }
                 >
-                  +
+                  <Plus className="w-4 h-4" />
                 </Button>
               </div>
               <Button
@@ -69,7 +75,7 @@ const CartProductCard = ({ product, updateQuantity, removeItem }) => {
                 size="sm"
                 onClick={handleClick}
               >
-                <ShoppingCart className="w-4 h-4 mr-2" /> Remove Item
+                <Trash2 className="w-4 h-4 mr-2" /> Remove Item
               </Button>
             </div>
           </div>
@@ -81,7 +87,7 @@ const CartProductCard = ({ product, updateQuantity, removeItem }) => {
 
 CartProductCard.propTypes = {
   product: PropTypes.object.isRequired,
-  updateQuantity: PropTypes.func,
+  handleUpdateQuantity: PropTypes.func,
   removeItem: PropTypes.func,
 };
 

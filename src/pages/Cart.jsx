@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   Card,
@@ -7,9 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { remove } from "@/store/cartSlice";
 import EmptyCart from "@/components/EmptyCart";
 import { Button } from "@/components/ui/button";
+import { remove, updateQuantity } from "@/store/cartSlice";
 import CartProductCard from "@/components/component/CartProductCard";
 
 const Cart = () => {
@@ -22,17 +22,11 @@ const Cart = () => {
     dispatch(remove(id));
   };
 
-  const [cartItems, setCartItems] = useState(cartProducts);
-  const updateQuantity = (id, newQuantity) => {
-    setCartItems((items) =>
-      items.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(0, newQuantity) } : item
-      )
-    );
-    console.log(newQuantity);
+  const handleUpdateQuantity = (id, newQuantity) => {
+    dispatch(updateQuantity({ id, quantity: newQuantity }));
   };
 
-  const total = cartItems.reduce(
+  const total = cartProducts.reduce(
     (sum, item) => sum + item.price * item.minimumOrderQuantity,
     0
   );
@@ -52,17 +46,17 @@ const Cart = () => {
                 key={product.id}
                 product={product}
                 removeItem={removeItem}
-                updateQuantity={updateQuantity}
+                handleUpdateQuantity={handleUpdateQuantity}
               />
             ))}
           </ul>
         </CardContent>
         <CardFooter className="flex items-center justify-between py-20">
-          <div className="text-xl font-semibold md:text-2xl">
+          <div className="text-lg font-semibold md:text-xl lg:text-2xl">
             Total: ${total.toFixed(2)}
           </div>
           <Button
-            className="rounded-xl md:w-44 lg:w-48 md:h-8 lg:h-10"
+            className="rounded-xl w-fit md:w-44 lg:w-48 md:h-8 lg:h-10"
             disabled={cartProducts.length === 0}
           >
             Proceed to Checkout
