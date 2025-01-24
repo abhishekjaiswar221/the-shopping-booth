@@ -15,7 +15,7 @@ const cartSlice = createSlice({
     updateQuantity: (state, action) => {
       const product = state.find((product) => product.id === action.payload.id);
       if (product) {
-        product.minimumOrderQuantity = Math.max(0, action.payload.quantity);
+        product.minimumOrderQuantity = Math.max(1, action.payload.quantity);
       }
     },
   },

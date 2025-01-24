@@ -1,16 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import EmptyCart from "@/components/EmptyCart";
-import { Button } from "@/components/ui/button";
+import { useSelector, useDispatch } from "react-redux";
 import { remove, updateQuantity } from "@/store/cartSlice";
+import OrderSummary from "@/components/component/OrderSummary";
 import CartProductCard from "@/components/component/CartProductCard";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Cart = () => {
   const cartProducts = useSelector((state) => state.cart);
@@ -32,9 +26,9 @@ const Cart = () => {
   );
 
   return (
-    <div className="p-4 lg:p-10 xl:px-20">
+    <div className="flex flex-col gap-8 p-4 lg:gap-8 xl:gap-10 lg:flex-row lg:p-10 xl:px-20">
       <Card className="w-full border-none shadow-none">
-        <CardHeader className="px-0">
+        <CardHeader className="p-0 pb-5 lg:px-0">
           <CardTitle className="text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
             Shopping Cart
           </CardTitle>
@@ -51,18 +45,8 @@ const Cart = () => {
             ))}
           </ul>
         </CardContent>
-        <CardFooter className="flex items-center justify-between py-20">
-          <div className="text-lg font-semibold md:text-xl lg:text-2xl">
-            Total: ${total.toFixed(2)}
-          </div>
-          <Button
-            className="rounded-xl w-fit md:w-44 lg:w-48 md:h-8 lg:h-10"
-            disabled={cartProducts.length === 0}
-          >
-            Proceed to Checkout
-          </Button>
-        </CardFooter>
       </Card>
+      <OrderSummary total={total} cartProducts={cartProducts} />
     </div>
   );
 };
