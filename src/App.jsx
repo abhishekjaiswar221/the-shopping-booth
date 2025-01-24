@@ -11,7 +11,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NextTopLoader from "nextjs-toploader";
 import AppLayout from "./components/layouts/AppLayout";
-import PageNotFound from "./components/component/PageNotFound";
+import PageNotFound from "./components/PageNotFound";
 
 const App = () => {
   const router = createBrowserRouter(

@@ -13,7 +13,7 @@ export const productSlice = createApi({
     getAllProducts: builder.query({
       // The URL for the request is '/fakeApi/posts'
       query: () =>
-        "/products/category/mobile-accessories?limit=8&sortBy=title&order=asc&select=id,thumbnail,title,price,brand",
+        "/products/category/mobile-accessories?limit=8&sortBy=title&order=asc&select=id,thumbnail,title,price,brand,minimumOrderQuantity",
     }),
   }),
 });
